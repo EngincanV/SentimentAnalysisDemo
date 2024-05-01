@@ -1,4 +1,4 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using SentimentAnalysisDemo.MultiTenancy;
 using Volo.Abp.AuditLogging;
@@ -15,6 +15,7 @@ using Volo.Abp.PermissionManagement.OpenIddict;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using Volo.CmsKit;
+using Volo.CmsKit.Comments;
 
 namespace SentimentAnalysisDemo;
 
@@ -66,5 +67,11 @@ namespace SentimentAnalysisDemo;
 #if DEBUG
         context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, NullEmailSender>());
 #endif
+        
+        Configure<CmsKitCommentOptions>(options =>
+        {
+            options.EntityTypes.Add(new CommentEntityTypeDefinition("Comment"));
+            options.IsRecaptchaEnabled = true;
+        });
     }
 }
