@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using SentimentAnalysisDemo.MultiTenancy;
 using Volo.Abp.AuditLogging;
@@ -14,6 +14,7 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.OpenIddict;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Volo.CmsKit;
 
 namespace SentimentAnalysisDemo;
 
@@ -30,7 +31,8 @@ namespace SentimentAnalysisDemo;
     typeof(AbpTenantManagementDomainModule),
     typeof(AbpEmailingModule)
 )]
-public class SentimentAnalysisDemoDomainModule : AbpModule
+[DependsOn(typeof(CmsKitDomainModule))]
+    public class SentimentAnalysisDemoDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

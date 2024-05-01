@@ -18,6 +18,7 @@
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="8.1.1" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="8.1.1" />
     <PackageReference Include="Volo.Abp.OpenIddict.Domain.Shared" Version="8.1.1" />
+    <PackageReference Include="Volo.CmsKit.Domain.Shared" Version="8.1.1" />
   </ItemGroup>
 
   <ItemGroup>

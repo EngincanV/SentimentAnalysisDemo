@@ -1,4 +1,4 @@
-﻿using SentimentAnalysisDemo.Localization;
+using SentimentAnalysisDemo.Localization;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.FeatureManagement;
@@ -12,6 +12,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using Volo.CmsKit;
 
 namespace SentimentAnalysisDemo;
 
@@ -25,7 +26,8 @@ namespace SentimentAnalysisDemo;
     typeof(AbpSettingManagementDomainSharedModule),
     typeof(AbpTenantManagementDomainSharedModule)    
     )]
-public class SentimentAnalysisDemoDomainSharedModule : AbpModule
+[DependsOn(typeof(CmsKitDomainSharedModule))]
+    public class SentimentAnalysisDemoDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

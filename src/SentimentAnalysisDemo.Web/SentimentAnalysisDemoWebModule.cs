@@ -39,6 +39,7 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Volo.CmsKit.Web;
 
 namespace SentimentAnalysisDemo.Web;
 
@@ -55,7 +56,8 @@ namespace SentimentAnalysisDemo.Web;
     typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpSwashbuckleModule)
     )]
-public class SentimentAnalysisDemoWebModule : AbpModule
+[DependsOn(typeof(CmsKitWebModule))]
+    public class SentimentAnalysisDemoWebModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

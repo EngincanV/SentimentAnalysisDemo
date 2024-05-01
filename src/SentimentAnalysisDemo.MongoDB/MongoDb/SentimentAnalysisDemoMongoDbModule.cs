@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.MongoDB;
 using Volo.Abp.BackgroundJobs.MongoDB;
 using Volo.Abp.FeatureManagement.MongoDB;
@@ -9,6 +9,7 @@ using Volo.Abp.PermissionManagement.MongoDB;
 using Volo.Abp.SettingManagement.MongoDB;
 using Volo.Abp.TenantManagement.MongoDB;
 using Volo.Abp.Uow;
+using Volo.CmsKit.MongoDB;
 
 namespace SentimentAnalysisDemo.MongoDB;
 
@@ -23,7 +24,8 @@ namespace SentimentAnalysisDemo.MongoDB;
     typeof(AbpTenantManagementMongoDbModule),
     typeof(AbpFeatureManagementMongoDbModule)
     )]
-public class SentimentAnalysisDemoMongoDbModule : AbpModule
+[DependsOn(typeof(CmsKitMongoDbModule))]
+    public class SentimentAnalysisDemoMongoDbModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

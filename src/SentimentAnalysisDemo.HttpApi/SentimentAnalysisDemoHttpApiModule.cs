@@ -1,4 +1,4 @@
-﻿using Localization.Resources.AbpUi;
+using Localization.Resources.AbpUi;
 using SentimentAnalysisDemo.Localization;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
@@ -8,6 +8,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Volo.CmsKit;
 
 namespace SentimentAnalysisDemo;
 
@@ -20,7 +21,8 @@ namespace SentimentAnalysisDemo;
     typeof(AbpFeatureManagementHttpApiModule),
     typeof(AbpSettingManagementHttpApiModule)
     )]
-public class SentimentAnalysisDemoHttpApiModule : AbpModule
+[DependsOn(typeof(CmsKitHttpApiModule))]
+    public class SentimentAnalysisDemoHttpApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
