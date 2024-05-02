@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML.Data;
 
-namespace SentimentAnalysisDemo.Web.ML.Model;
+namespace SentimentAnalysisDemo.ML.Model;
 
 public class SentimentAnalyzeResult
 {

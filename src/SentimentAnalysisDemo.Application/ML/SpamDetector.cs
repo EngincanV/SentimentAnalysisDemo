@@ -2,7 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.ML;
-using SentimentAnalysisDemo.Web.ML.Model;
+using SentimentAnalysisDemo.ML.Model;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
 
