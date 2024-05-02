@@ -12,5 +12,5 @@ In this demo application, I created an [ABP-based application](https://docs.abp.
 
 ## Resources
 
-* You can get the dataset from 👉 https://www.kaggle.com/datasets/ue153011/spam-mail-detection-dataset
-* You can get the slides that I presented at the [ABP Dotnet CONF 2024](https://abp.io/conference/2024) from 👉 https://sessionize.com/s/engincan-veske/sentiment-analysis-in-.net/90645
+* [Dataset](https://www.kaggle.com/datasets/ue153011/spam-mail-detection-dataset)
+* [Slides](https://github.com/EngincanV/presentations/tree/main/ABP/Dotnet-Conf-2024) used in the [ABP Dotnet CONF 2024](https://abp.io/conference/2024)
