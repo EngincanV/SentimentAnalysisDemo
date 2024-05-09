@@ -30,7 +30,7 @@ public class SpamDetector : ISpamDetector, ITransientDependency
             .Append(mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(labelColumnName: "Label", featureColumnName: "Features"));
         
         //Step 4: Train the model
-        var model = estimator.Fit(trainingData);
+        ITransformer model = estimator.Fit(trainingData);
 
         #region Advanced: Evaulating the model to see its accuracy and save/persist the trained model to a .ZIP file and use it (like a cache).
 
@@ -41,6 +41,9 @@ public class SpamDetector : ISpamDetector, ITransientDependency
         
         //* Save/persist the trained model to a .ZIP file.
         mlContext.Model.Save(model, trainingData.Schema, ModelPath);
+        
+        //* Load the model from the .ZIP file.
+        // model = mlContext.Model.Load(ModelPath, out DataViewSchema inputSchema);
 
         #endregion
         
