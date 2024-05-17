@@ -10,9 +10,6 @@ namespace SentimentAnalysisDemo.ML;
 
 public class SpamDetector : ISpamDetector, ITransientDependency
 {
-    private static readonly string DataPath = Path.Combine(Environment.CurrentDirectory, "ML", "Data", "spam_data.csv");
-    private static readonly string ModelPath = Path.Combine(Environment.CurrentDirectory, "ML", "Data", "spam_data_model.zip");
-    
     public async Task CheckAsync(string text)
     {
         var mlContext = new MLContext();
