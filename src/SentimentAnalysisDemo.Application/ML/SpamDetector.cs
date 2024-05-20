@@ -40,6 +40,9 @@ public class SpamDetector : ISpamDetector, ITransientDependency
 
             //* Train the model 👇
             model = estimator.Fit(trainingData);
+
+            //* Save/persist the trained model to a .ZIP file. 👇
+            mlContext.Model.Save(model, trainingData.Schema, modelPath);
         }
 
         //* Predict 👇
