@@ -1,6 +1,6 @@
 # SentimentAnalysisDemo
 
-Welcome to the `SentimentAnalysisDemo` repository, a demonstration of sentiment analysis integration within an ABP-based application, presented at the [ABP Dotnet CONF 2024](https://abp.io/conference/2024).
+Welcome to the `SentimentAnalysisDemo` repository, a demonstration of sentiment analysis integration within an ABP-based application, presented at the [ABP Dotnet CONF 2024](https://abp.io/conference/2024) & [Hello Talks 2024](https://kommunity.com/devnot/events/hello-talks-2024-84b69837).
 
 > Love the `SentimentAnalysisDemo` project? Then, please give a star(⭐)! Thanks in advance!
 
